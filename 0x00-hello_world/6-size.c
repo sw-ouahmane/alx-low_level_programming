@@ -13,9 +13,9 @@ int main(void)
 	float f;
 
 printf("Size of a char:%lu byte(s)\n", (unsigned long)sizeof(a));
-printf("Size of b char:%lu byte(s)\n", (unsigned long)sizeof(b));
-printf("Size of c char:%lu byte(s)\n", (unsigned long)sizeof(c));
-printf("Size of d char:%lu byte(s)\n", (unsigned long)sizeof(d));
-printf("Size of f char:%lu byte(s)\n", (unsigned long)sizeof(f));
+printf("Size of b int:%lu byte(s)\n", (unsigned long)sizeof(b));
+printf("Size of c long int:%lu byte(s)\n", (unsigned long)sizeof(c));
+printf("Size of d long long int:%lu byte(s)\n", (unsigned long)sizeof(d));
+printf("Size of f float:%lu byte(s)\n", (unsigned long)sizeof(f));
 return (0);
 }
