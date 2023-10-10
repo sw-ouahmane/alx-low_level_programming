@@ -5,16 +5,17 @@
  *
  * @n: The integer to find the absolute value of
  *
+ * Description: This function computes and returns the absolute value of the
+ * input integer 'n'. If 'n' is negative, its negation is returned.
+ *
  * Return: The absolute value of the integer 'n'
  */
-int _abs(int c)
+int _abs(int n)
 {
-if (c < 0)
+if (n < 0)
 {
-int abs_val;
-abs_val = c * -1;
-
+int abs_val = n * -1;  /* Calculate the absolute value */
 return (abs_val);
 }
-return (c);
+return (n);
 }
