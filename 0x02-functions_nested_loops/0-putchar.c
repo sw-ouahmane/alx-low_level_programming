@@ -1,4 +1,11 @@
 #include "main.h"
+/**
+ * main - Entry point of the program
+ *
+ * Description: This is the main function that prints putchar.c.
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
