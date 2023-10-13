@@ -4,6 +4,7 @@
  * print_triangle - Prints a triangle of a specified size
  * @size: The size of the triangle
  */
+
 void print_triangle(int size)
 {
 if (size <= 0)
