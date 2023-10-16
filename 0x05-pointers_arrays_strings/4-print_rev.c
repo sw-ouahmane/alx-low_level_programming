@@ -1,8 +1,4 @@
 
-Here's the code with i changed to index:
-
-c
-Copy code
 #include "main.h"
 
 /**
