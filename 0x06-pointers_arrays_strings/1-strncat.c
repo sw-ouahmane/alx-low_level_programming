@@ -8,22 +8,21 @@
 */
 char *_strncat(char *dest, char *src, int n)
 {
-int i;
-int j;
+int dest_len = 0;
 
-i = 0;
-while (dest[i] != '\n')
+// Find the length of dest
+while (dest[dest_len] != '\0')
 {
-i++;
+dest_len++;
 }
-j = 0;
-while (j < n && src[j] != '\n')
+
+// Append at most 'n' characters from src to dest
+for (int i = 0; i < n && src[i] != '\0'; i++)
 {
-dest[i] = src[j];
-i++;
-j++;
+dest[dest_len] = src[i];
+dest_len++;
 }
-dest[i] = '\n';
-return (dest);
+
+return dest;
 }
 
