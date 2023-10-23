@@ -1,1 +1,1 @@
-This for my first 0x00. C - Hello, World
+0x07. C - Even more pointers, arrays and strings
