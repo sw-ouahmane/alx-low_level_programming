@@ -1,54 +1,74 @@
 #include "variadic_functions.h"
-
 /**
- * print_all - prints anything.
- * @format: a list of types of arguments passed to the function.
- *
- * Return: no return.
+ * print_c - Print a character and handle the separator.
  */
+void print_c(va_list args, int *c_flag)
+{
+if (*c_flag)
+printf(", ");
+printf("%c", va_arg(args, int));
+*c_flag = 1;
+}
+/**
+ * print_i - Print an integer and handle the separator.
+ */
+void print_i(va_list args, int *c_flag)
+{
+if (*c_flag)
+printf(", ");
+printf("%d", va_arg(args, int));
+*c_flag = 1;
+}
+
+void print_f(va_list args, int *c_flag)
+{
+if (*c_flag)
+printf(", ");
+printf("%f", va_arg(args, double));
+*c_flag = 1;
+}
+
+void print_s(va_list args, int *c_flag)
+{
+char *str = va_arg(args, char *);
+if (*c_flag)
+printf(", ");
+if (!str)
+printf("(nil)");
+else
+printf("%s", str);
+*c_flag = 1;
+}
+
 void print_all(const char * const format, ...)
 {
 va_list valist;
-unsigned int i = 0, j, c = 0;
-char *str;
-const char t_arg[] = "cifs";
+unsigned int i = 0;
+int c_flag = 0;
 
 va_start(valist, format);
+
 while (format && format[i])
 {
-j = 0;
-while (t_arg[j])
-{
-if (format[i] == t_arg[j] && c)
-{
-printf(", ");
-break;
-}
-j++;
-}
 switch (format[i])
 {
 case 'c':
-printf("%c", va_arg(valist, int)), c = 1;
+print_c(valist, &c_flag);
 break;
 case 'i':
-printf("%d", va_arg(valist, int)), c = 1;
+print_i(valist, &c_flag);
 break;
 case 'f':
-printf("%f", va_arg(valist, double)), c = 1;
+print_f(valist, &c_flag);
 break;
 case 's':
-str = va_arg(valist, char *), c = 1;
-if (!str)
-{
-printf("(nil)");
-break;
-}
-printf("%s", str);
+print_s(valist, &c_flag);
 break;
 }
 i++;
 }
-printf("\n"), va_end(valist);
+
+printf("\n");
+va_end(valist);
 }
 
